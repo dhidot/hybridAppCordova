@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hybridApp</title>
+
+    <!--  Onsen UI CSS  -->
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+
+    <!--  Onsesn UI JS  -->
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+
+    <!--  myCSS  -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!--  Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<ons-navigator swipable id="myNavigator" page="pages/beranda.html">
+    <ons-page>
+        <ons-tabbar swipeable position="button">
+            <ons-tab page="pages/beranda.html" label="Beranda" icon="ion-ios-home, material:md-home" badge="7" active>
+            </ons-tab>
+            <ons-tab page="pages/tab1.html" label="Tab 1" icon="md-settings" active-icon="md-face">
+            </ons-tab>
+            <ons-tab page="pages/tab2.html" label="Tab 2" icon="md-settings" active-icon="md-face">
+            </ons-tab>
+        </ons-tabbar>
+    </ons-page>
+</ons-navigator>
+</body>
+
+<script src="js/load.js"></script>
+<script type="text/javascript">
+    document.addEventListener('prechange', function (event) {
+        document.querySelector('ons-toolbar .center').innerHTML = event.tabItem.getAttribute('label');
+    })
+</script>
+</html>
